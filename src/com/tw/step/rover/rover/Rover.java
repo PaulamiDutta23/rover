@@ -8,6 +8,7 @@ import com.tw.step.rover.position.Navigator;
 public class Rover {
     private final String id;
     private RoverState roverState;
+    private Coordinate nextCoordinate;
     private Coordinate coordinate;
     private Direction heading;
 
@@ -43,7 +44,8 @@ public class Rover {
     }
 
     Coordinate getNextCoordinateInternal(Navigator navigator) {
-        return navigator.nextCoordinate(this.coordinate, this.heading);
+        this.nextCoordinate = navigator.nextCoordinate(this.coordinate, this.heading);
+        return this.nextCoordinate;
     }
 
     void setCoordinate(Coordinate coordinate) {
@@ -51,11 +53,18 @@ public class Rover {
     }
 
     boolean isWithin(Boundary boundary) {
-        return boundary.isWithin(this.coordinate);
+        return boundary.isWithin(this.nextCoordinate);
     }
 
     @Override
     public String toString() {
-        return coordinate.toString() + " " + heading.toString();
+        String coordinate = this.coordinate.toString();
+        String heading = this.heading.toString();
+
+        String state = String.format("%s %s",coordinate, heading);
+        if(this.roverState instanceof DeadRoverState) {
+            return state.concat(" LOST");
+        }
+        return  state;
     }
 }

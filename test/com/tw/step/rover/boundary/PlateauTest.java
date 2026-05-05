@@ -3,8 +3,7 @@ package com.tw.step.rover.boundary;
 import com.tw.step.rover.position.Coordinate;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 class PlateauTest {
     @Test

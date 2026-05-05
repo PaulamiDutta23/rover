@@ -48,4 +48,15 @@ public class RoverSystemScanner {
     public Direction scanDirection() {
         return Direction.valueOf(this.consume());
     }
+
+    public Coordinate scanPlateauBoundary() {
+        Coordinate topRightCoord = this.scanCoordinate();
+
+        if(this.peek().matches("[NSEW]")){
+            this.currentIndex = 0;
+            return null;
+        }
+
+        return topRightCoord;
+    }
 }
