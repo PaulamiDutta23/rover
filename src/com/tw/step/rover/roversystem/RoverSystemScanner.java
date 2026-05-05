@@ -1,8 +1,6 @@
 package com.tw.step.rover.roversystem;
 
-import com.tw.step.rover.commands.RoverCommands;
-import com.tw.step.rover.position.Coordinate;
-import com.tw.step.rover.position.Direction;
+import com.tw.step.rover.position.*;
 
 public class RoverSystemScanner {
     private final String[] tokens;

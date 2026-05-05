@@ -1,8 +1,7 @@
 package com.tw.step.rover.rover;
 
-import com.tw.step.rover.boundary.Boundary;
-import com.tw.step.rover.position.Coordinate;
-import com.tw.step.rover.position.Navigator;
+import com.tw.step.rover.boundary.*;
+import com.tw.step.rover.position.*;
 
 public class LiveRoverState implements RoverState {
     private final Rover rover;

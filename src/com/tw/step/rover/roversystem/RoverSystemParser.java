@@ -1,13 +1,8 @@
 package com.tw.step.rover.roversystem;
 
-import com.tw.step.rover.boundary.Boundary;
-import com.tw.step.rover.boundary.Plateau;
-import com.tw.step.rover.commands.CommandCreator;
-import com.tw.step.rover.commands.RoverCommand;
-import com.tw.step.rover.commands.RoverCommands;
-import com.tw.step.rover.position.Coordinate;
-import com.tw.step.rover.position.Direction;
-import com.tw.step.rover.position.Navigator;
+import com.tw.step.rover.boundary.*;
+import com.tw.step.rover.commands.*;
+import com.tw.step.rover.position.*;
 import com.tw.step.rover.rover.Rover;
 
 public class RoverSystemParser {
@@ -41,8 +36,7 @@ public class RoverSystemParser {
 
     public RoverSystem parse() {
         RoverSystem roverSystem = new RoverSystem();
-        Boundary boundary = parsePlateau();
-        this.boundary = boundary;
+        this.boundary = parsePlateau();
         Rover rover = parseRover();
         roverSystem.addRover(rover);
         RoverCommands roverCommands = parseRoverCommands();

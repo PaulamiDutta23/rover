@@ -1,7 +1,6 @@
 package com.tw.step.rover.roversystem;
 
-import com.tw.step.rover.position.Coordinate;
-import com.tw.step.rover.position.Direction;
+import com.tw.step.rover.position.*;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
